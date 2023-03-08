@@ -8,13 +8,13 @@ import javafx.stage.Stage;
 
 import java.io.IOException;
 
-public class HelloApplication extends Application {
+public class Main extends Application {
     @Override
     public void start(Stage stage) throws IOException {
-        FXMLLoader fxmlLoader = new FXMLLoader(HelloApplication.class.getResource("dealership-view.fxml"));
+        FXMLLoader fxmlLoader = new FXMLLoader(Main.class.getResource("dealership-view.fxml"));
         Scene scene = new Scene(fxmlLoader.load());
         stage.setTitle("Spencer's Dealership!");
-        stage.getIcons().add(new Image(HelloApplication.class.getResourceAsStream("images/car.png")));
+        stage.getIcons().add(new Image(Main.class.getResourceAsStream("images/car.png")));
         stage.setScene(scene);
         stage.show();
     }

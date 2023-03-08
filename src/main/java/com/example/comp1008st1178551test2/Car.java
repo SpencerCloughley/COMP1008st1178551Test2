@@ -1,5 +1,7 @@
 package com.example.comp1008st1178551test2;
 
+import java.text.DecimalFormat;
+
 public class Car {
     private String make;
     private String model;
@@ -38,7 +40,7 @@ public class Car {
     }
 
     public void setModel(String model) {
-        //until I can verify, "characters cannot be blank" is being considered as NO blank characters allowed
+        //"characters cannot be blank" is being considered as NO blank characters allowed
         if(model.length()>=2 && !model.contains(" "))
             this.model = model;
         else
@@ -68,6 +70,7 @@ public class Car {
     }
 
     public String toString(){
-        return year + " " + make + " " + model + " $%.2f" + price;
+        DecimalFormat f =new DecimalFormat("##.00");
+        return year + " " + make + " " + model + " $" + f.format(price);
     }
 }

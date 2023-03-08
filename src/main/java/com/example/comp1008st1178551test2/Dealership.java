@@ -1,5 +1,6 @@
 package com.example.comp1008st1178551test2;
 
+import java.text.DecimalFormat;
 import java.util.ArrayList;
 
 public class Dealership {
@@ -34,6 +35,7 @@ public class Dealership {
     }
 
     public String toString(){
-        return "The inventory has " + inventory.size() + " cars worth $%.2f" + getInventoryValue();
+        DecimalFormat f =new DecimalFormat("##.00");
+        return "The inventory has " + inventory.size() + " cars worth $" + f.format(getInventoryValue());
     }
 }
