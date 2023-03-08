@@ -35,31 +35,32 @@
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="Make" GridPane.rowIndex="1" />
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="Model" GridPane.rowIndex="2" />
                         <Label alignment="CENTER" prefHeight="17.0" prefWidth="100.0" text="Price" GridPane.rowIndex="3" />
-                        <TextField GridPane.columnIndex="1">
+                        <TextField fx:id="yearField" GridPane.columnIndex="1">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="1">
+                        <TextField fx:id="makeField" GridPane.columnIndex="1" GridPane.rowIndex="1">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="2">
+                        <TextField fx:id="modelField" GridPane.columnIndex="1" GridPane.rowIndex="2">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </TextField>
-                        <TextField GridPane.columnIndex="1" GridPane.rowIndex="3">
+                        <TextField fx:id="priceField" GridPane.columnIndex="1" GridPane.rowIndex="3">
                            <GridPane.margin>
                               <Insets right="5.0" />
                            </GridPane.margin>
                         </TextField>
                      </children>
                   </GridPane>
+                  <Label fx:id="errorLabel" prefHeight="30.0" prefWidth="250.0" text="Label" wrapText="true" />
                   <Button fx:id="addCarBtn" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="129.0" text="Add Car to Inventory" textAlignment="CENTER">
                      <VBox.margin>
-                        <Insets bottom="10.0" top="60.0" />
+                        <Insets bottom="10.0" top="40.0" />
                      </VBox.margin>
                   </Button>
                   <Button fx:id="defaultBtn" mnemonicParsing="false" onAction="#addDefault" prefHeight="25.0" prefWidth="132.0" text="Default Vehicle" />

@@ -7,12 +7,27 @@ import javafx.fxml.Initializable;
 import javafx.scene.control.Button;
 import javafx.scene.control.Label;
 import javafx.scene.control.ListView;
+import javafx.scene.control.TextField;
 
 import java.net.URL;
 import java.util.ResourceBundle;
 
 public class DealershipViewController implements Initializable {
 
+    @FXML
+    private TextField makeField;
+
+    @FXML
+    private TextField modelField;
+
+    @FXML
+    private TextField priceField;
+
+    @FXML
+    private TextField yearField;
+
+    @FXML
+    private Label errorLabel;
     @FXML
     private Button addCarBtn;
 
@@ -28,14 +43,29 @@ public class DealershipViewController implements Initializable {
     @FXML
     private Label valueLabel;
 
+    private Dealership currentDealer;
+
     @FXML
     void addCar(ActionEvent event) {
-
+        int newYear= Integer.parseInt(yearField.getText());
+        double newPrice = Double.parseDouble(priceField.getText());
+        String newModel = modelField.getText();
+        String newMake = makeField.getText();
+        try {
+            Car temp = new Car(newMake, newModel, newPrice, newYear);
+            currentDealer.addCar(temp);
+        }catch (Exception e) {
+            errorLabel.setText(e.getMessage());
+        }
+        updateLabels(currentDealer);
     }
 
     @FXML
     void addDefault(ActionEvent event) {
-
+        yearField.setText("2019");
+        makeField.setText("Nissan");
+        modelField.setText("Sentra");
+        priceField.setText("60234.63");
     }
 
     @Override
@@ -48,6 +78,7 @@ public class DealershipViewController implements Initializable {
         spencer.addCar(car2);
         spencer.addCar(car3);
         updateLabels(spencer);
+        currentDealer=spencer;
     }
 
     private void updateLabels(Dealership dealer){
