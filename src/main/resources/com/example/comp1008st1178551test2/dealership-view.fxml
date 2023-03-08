@@ -70,11 +70,14 @@
                   <Label alignment="CENTER" prefHeight="34.0" prefWidth="81.0" text="Inventory" />
                   <ListView fx:id="dealershipList" prefHeight="200.0" prefWidth="200.0">
                      <padding>
-                        <Insets left="5.0" />
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
                      </padding>
+                     <VBox.margin>
+                        <Insets bottom="10.0" left="10.0" right="10.0" top="10.0" />
+                     </VBox.margin>
                   </ListView>
-                  <Label fx:id="valueLabel" prefHeight="75.0" prefWidth="200.0" text="Inventory Value" />
-                  <Label fx:id="expensiveLabel" prefHeight="75.0" prefWidth="200.0" text="Most Expensive Car" />
+                  <Label fx:id="valueLabel" prefHeight="50.0" prefWidth="200.0" wrapText="true" VBox.vgrow="ALWAYS" />
+                  <Label fx:id="expensiveLabel" alignment="CENTER" prefHeight="60.0" prefWidth="200.0" wrapText="true" VBox.vgrow="ALWAYS" />
                </children>
             </VBox>
          </children>
