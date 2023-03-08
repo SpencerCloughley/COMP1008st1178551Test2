@@ -16,4 +16,12 @@ public class Dealership {
     public ArrayList<Car> getInventory(){
         return inventory;
     }
+
+    public double getInventoryValue(){
+        double sum=0;
+        for(int i=0; i<inventory.size();i++){
+            sum += inventory.get(i).getPrice();
+        }
+        return sum;
+    }
 }
