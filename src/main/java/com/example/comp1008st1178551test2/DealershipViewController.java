@@ -1,5 +1,6 @@
 package com.example.comp1008st1178551test2;
 
+import javafx.collections.FXCollections;
 import javafx.event.ActionEvent;
 import javafx.fxml.FXML;
 import javafx.fxml.Initializable;
@@ -46,6 +47,13 @@ public class DealershipViewController implements Initializable {
         spencer.addCar(car1);
         spencer.addCar(car2);
         spencer.addCar(car3);
+        updateLabels(spencer);
+    }
+
+    private void updateLabels(Dealership dealer){
+        dealershipList.setItems(FXCollections.observableArrayList(dealer.getInventory()));
+        expensiveLabel.setText("The most expensive car is: " + dealer.getMostExpensiveCar().toString());
+        valueLabel.setText(dealer.toString());
     }
 }
 
