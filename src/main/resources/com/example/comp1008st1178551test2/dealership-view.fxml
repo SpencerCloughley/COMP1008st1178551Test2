@@ -12,7 +12,6 @@
 <?import javafx.scene.layout.RowConstraints?>
 <?import javafx.scene.layout.VBox?>
 
-
 <AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/19" xmlns:fx="http://javafx.com/fxml/1" fx:controller="com.example.comp1008st1178551test2.DealershipViewController">
    <children>
       <HBox prefHeight="400.0" prefWidth="600.0">
@@ -58,24 +57,24 @@
                         </TextField>
                      </children>
                   </GridPane>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="129.0" text="Add Car to Inventory" textAlignment="CENTER">
+                  <Button fx:id="addCarBtn" mnemonicParsing="false" onAction="#addCar" prefHeight="25.0" prefWidth="129.0" text="Add Car to Inventory" textAlignment="CENTER">
                      <VBox.margin>
                         <Insets bottom="10.0" top="60.0" />
                      </VBox.margin>
                   </Button>
-                  <Button mnemonicParsing="false" prefHeight="25.0" prefWidth="132.0" text="Default Vehicle" />
+                  <Button fx:id="defaultBtn" mnemonicParsing="false" onAction="#addDefault" prefHeight="25.0" prefWidth="132.0" text="Default Vehicle" />
                </children>
             </VBox>
             <VBox alignment="TOP_CENTER" prefHeight="400.0" prefWidth="300.0">
                <children>
                   <Label alignment="CENTER" prefHeight="34.0" prefWidth="81.0" text="Inventory" />
-                  <ListView prefHeight="200.0" prefWidth="200.0">
+                  <ListView fx:id="dealershipList" prefHeight="200.0" prefWidth="200.0">
                      <padding>
                         <Insets left="5.0" />
                      </padding>
                   </ListView>
-                  <Label prefHeight="75.0" prefWidth="200.0" text="Inventory Value" />
-                  <Label prefHeight="75.0" prefWidth="200.0" text="Most Expensive Car" />
+                  <Label fx:id="valueLabel" prefHeight="75.0" prefWidth="200.0" text="Inventory Value" />
+                  <Label fx:id="expensiveLabel" prefHeight="75.0" prefWidth="200.0" text="Most Expensive Car" />
                </children>
             </VBox>
          </children>
