@@ -24,4 +24,12 @@ public class Dealership {
         }
         return sum;
     }
+    public Car getMostExpensiveCar(){
+        Car temp=new Car("BMW","test",0,1900);
+        for(int i=0; i<inventory.size();i++){
+            if(inventory.get(i).getPrice()>= temp.getPrice())
+                temp=inventory.get(i);
+        }
+        return temp;
+    }
 }
