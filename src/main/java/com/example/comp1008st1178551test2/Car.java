@@ -66,4 +66,8 @@ public class Car {
         else
             throw new IllegalArgumentException("Incorrect year entered, must be between 1900 and 2023 inclusive");
     }
+
+    public String toString(){
+        return year + " " + make + " " + model + " $%.2f" + price;
+    }
 }
